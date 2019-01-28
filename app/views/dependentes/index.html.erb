@@ -1,0 +1,78 @@
+<!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <%= link_to "Dependentes", root_path, class: "navbar-brand text-white" %>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <%= link_to "Home", root_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to 'Funcionários', funcionarios_path, class:"nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Cargos", cargos_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Dependentes", dependentes_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Responsabilidades", responsabilidades_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Relatórios</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div class="container">
+  <div class="row col-md-6 col-md-offset-2 custyle">
+
+
+<p id="notice">
+
+  <%= notice %>
+    
+  </p>
+
+<h1>Dependentes</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th class="col-8">Nome</th>
+      <th class="col-8">Endereco</th>
+      <th class="col-8">Telefone</th>
+      <th class="col-8">Documento</th>
+      <th class="col-8">Familiar</th>
+      <th colspan="8"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dependentes.each do |dependente| %>
+      <tr scope="row">
+        <td><%= dependente.nome %></td>
+        <td><%= dependente.endereco %></td>
+        <td><%= dependente.telefone %></td>
+        <td><%= dependente.documento %></td>
+        <td><%= dependente.funcionario&.nome %></td>
+        <td><%= link_to 'Show', dependente, class: "btn btn-info btn-xs pull-right" %></td>
+        <td><%= link_to 'Edit', edit_dependente_path(dependente), class: "btn btn-warning btn-xs pull-right" %></td>
+        <td><%= link_to 'Destroy', dependente, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs pull-right" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dependente', new_dependente_path, class: "btn btn-primary btn-xs pull-right" %>
+
+  </div>
+</div>

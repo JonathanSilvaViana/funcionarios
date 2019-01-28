@@ -1,0 +1,76 @@
+  <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <%= link_to "App Funcionários", root_path, class: "navbar-brand text-white" %>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <%= link_to "Home", root_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to 'Funcionários', funcionarios_path, class:"nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Cargos", cargos_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Dependentes", dependentes_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Responsabilidades", responsabilidades_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Relatórios</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+<%= form_with(model: cargo, local: true) do |form| %>
+  <% if cargo.errors.any? %>
+    <div id="error_explanation">
+
+      <div class="alert alert-danger" role="alert">
+        <h2><%= pluralize(cargo.errors.count, "error") %> prohibited this cargo from being saved:</h2>
+      </div>
+
+      <ul>
+      <% cargo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="row">
+
+          <div class="form-group col-md-12">
+          <div class="field">
+            <%= form.label :nome %>
+            <%= form.text_field :nome, class: "form-control", required: true %>
+          </div>
+          </div>
+
+          <div class="form-group col-md-12">
+          <div class="field">
+            <%= form.label :observacoes %>
+            <%= form.text_field :observacoes, class: "form-control", required: true %>
+          </div>
+          </div>
+
+          <div class="form-group col-md-12">
+          <div class="actions">
+            <%= form.submit class: "btn btn-primary btn-xs pull-right" %>
+          </div>
+          </div>
+
+  </div>
+
+<% end %>

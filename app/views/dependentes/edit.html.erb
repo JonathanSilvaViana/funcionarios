@@ -1,0 +1,53 @@
+<!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+        	
+        	<span class="navbar-brand text-white">Edit dependentes</span>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <%= link_to "Home", root_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to 'Funcionários', funcionarios_path, class:"nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Cargos", cargos_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Dependentes", dependentes_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Responsabilidades", responsabilidades_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Relatórios</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+<div class="container">
+	<div class="row col-md-6 col-md-offset-2 custyle">    
+
+		<br><br>
+
+<%= render 'form', dependente: @dependente %>
+
+
+<div class="row">
+		<%= link_to 'Back', dependentes_path, class: "btn btn-success btn-xs pull-right" %>
+</div>
+
+
+	</div>
+
+</div>

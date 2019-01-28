@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @responsabilidade.nome %>
+</p>
+
+<p>
+  <strong>Observacoes:</strong>
+  <%= @responsabilidade.observacoes %>
+</p>
+
+<p>
+  <strong>Funcionarios:</strong>
+  <%= @responsabilidade.funcionarios %>
+</p>
+
+<%= link_to 'Edit', edit_responsabilidade_path(@responsabilidade) %> |
+<%= link_to 'Back', responsabilidades_path %>

@@ -1,0 +1,32 @@
+<%= form_with(model: responsabilidade, local: true) do |form| %>
+  <% if responsabilidade.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(responsabilidade.errors.count, "error") %> prohibited this responsabilidade from being saved:</h2>
+
+      <ul>
+      <% responsabilidade.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :observacoes%>
+    <%= form.text_field :observacoes, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :funcionarios_id%>
+    <%= form.select :funcionarios_id, Funcionario.all.collect { |f| [f.nome, f.id] } , include_blank: true, required: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

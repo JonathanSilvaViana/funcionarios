@@ -1,0 +1,78 @@
+<!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <%= link_to "App Funcionários", root_path, class: "navbar-brand text-white" %>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <%= link_to "Home", root_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to 'Funcionários', funcionarios_path, class:"nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Cargos", cargos_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Dependentes", dependentes_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Responsabilidades", responsabilidades_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Relatórios</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @funcionario.nome %>
+</p>
+
+<p>
+  <strong>Endereco:</strong>
+  <%= @funcionario.endereco %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @funcionario.telefone %>
+</p>
+
+<p>
+  <strong>Documento:</strong>
+  <%= @funcionario.documento %>
+</p>
+
+<p>
+  <strong>Salario:</strong>
+  <%= @funcionario.salario %>
+</p>
+
+<p>
+  <strong>Responsabilidades:</strong>
+  <%= @funcionario.responsabilidades %>
+</p>
+
+<p>
+  <strong>Cargo:</strong>
+  <%= @funcionario.cargo %>
+</p>
+
+<p>
+
+  <strong>Dependentes:</strong>
+  <%= @funcionario.dependentes %>
+
+</p>
+
+<%= link_to 'Edit', edit_funcionario_path(@funcionario) %> |
+<%= link_to 'Back', funcionarios_path %>

@@ -1,0 +1,99 @@
+  <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <%= link_to "App Funcionários", root_path, class: "navbar-brand text-white" %>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <%= link_to "Home", root_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%=	link_to 'Funcionários', funcionarios_path, class:"nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Cargos", cargos_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Dependentes", dependentes_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Responsabilidades", responsabilidades_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Relatórios</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Card -->
+    <div class="container container mt-4 mb-5">
+
+    	<br><br>
+
+        <h3 class="display-4 text-center"> Descrição </h3>
+        <hr class="bg-dark mb-4 w-25">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <%= image_tag("coworkers.jpg", class: "card-img-top") %>
+                    <div class="card-block p-3">
+                        <h4 class="card-title">Funcionários</h4>
+                        <p class="card-text">Sessão de cadastro de funcionários</p>
+                        <%= link_to "Funcionários", funcionarios_path, class: "btn btn-primary rounded-0 mb-2" %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <%= image_tag("job.JPG" , class: "card-img-top") %>
+                    <div class="card-block p-3">
+                        <h4 class="card-title">Cargos</h4>
+                        <p class="card-text">Sessão de cadastro de cargos</p>
+                        <%= link_to "Cargos", cargos_path, class: "btn btn-primary rounded-0 mb-2" %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <%= image_tag("responsabilities.jpg", class: "card-img-top") %>
+                    <div class="card-block p-3">
+                        <h4 class="card-title">Responsabilidades</h4>
+                        <p class="card-text">Sessão de cadastro de Responsabilidades</p>
+                        <%= link_to "Responsabilidades", responsabilidades_path, class: "btn btn-primary rounded-0 mb-2" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white">
+
+
+        <!-- Social Icons -->
+
+        <!-- Footer Links -->
+        <div class="container pt-5 pb-2">
+            
+        </div>
+        <!-- Footer Links-->
+
+        <hr class="bg-white mx-4 mt-2 mb-1">
+
+        <!-- Copyright-->
+        <div class="container-fluid">
+            <p class="text-center m-0 py-1">
+                © 2019 Copyright <a href="https://getbootstrap.com/" class="text-white">Bootstrap 4</a>
+            </p>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
