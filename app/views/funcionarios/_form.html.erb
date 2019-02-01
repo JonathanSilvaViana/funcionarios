@@ -1,5 +1,5 @@
   <!-- Navigation -->
-     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container">
             <%= link_to "App Funcionários", root_path, class: "navbar-brand text-white" %>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,12 +23,12 @@
                         <%= link_to "Responsabilidades", responsabilidades_path, class: "nav-link text-white" %>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Relatórios</a>
+                        <%= link_to "Relatórios", relatorio_path, class: "nav-link text-white" %>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav> 
+    </nav>
 
 
 
@@ -87,44 +87,22 @@
                         </div>
                         </div>
 
+                        
+
 
                         <div class="form-group col-md-12">                    
                         <div class="field">
-                          <%= hidden_field_tag "funcionario[dependente_ids][]", "" %>
-                          <%= form.label :dependente_id %>
-                          
-                            <% Dependente.all.each do |dep| %>
 
-                            <%= check_box_tag "funcionario[dependente_ids][]", dep.id, funcionario.dependente_ids.include?(dep.id) %>
+                          <%=  collection_check_boxes(:funcionario, :dependente_ids, Dependente.all, :id, :nome) %><br>
 
-                            <span>
-                              
-                              <%= dep.nome  %>
-
-                            </span> <br>
-
-                            <%end%>
-
-                            <%#= render 'dependentes_form' %>
                         </div>
                         </div>
 
                         <div class="form-group col-md-12">                    
                         <div class="field">
-                          <%= hidden_field_tag "funcionario[responsabilidade_ids][]", "" %>
-                          <%= form.label :responsabilidade_id %>
-                          
-                          <% Responsabilidade.all.each do |responsa| %>
 
-                            <%= check_box_tag "funcionario[responsabilidade_ids][]", responsa.id, responsa.responsabilidade_ids.include?(responsa.id) %>
+                          <%=  collection_check_boxes(:funcionario, :responsabilidade_ids, Responsabilidade.all, :id, :nome) %>
 
-                            <span>
-                              
-                              <%= responsa.nome  %>
-
-                            </span> <br>
-
-                            <%end%>
                             
                         </div>
                         </div>

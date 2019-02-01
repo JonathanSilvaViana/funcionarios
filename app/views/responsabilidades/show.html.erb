@@ -1,19 +1,70 @@
+ <!-- Navigation -->
+     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <span class="navbar-brand text-white">Resposabilidades</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <%= link_to "Home", root_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to 'Funcionários', funcionarios_path, class:"nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Cargos", cargos_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Dependentes", dependentes_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Responsabilidades", responsabilidades_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Relatórios", relatorio_path, class: "nav-link text-white" %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> 
+
+    <div class="container mt-4 mb-5">
+    <div class="row col-md-6 col-md-offset-2 custyle"> 
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @responsabilidade.nome %>
-</p>
 
-<p>
-  <strong>Observacoes:</strong>
-  <%= @responsabilidade.observacoes %>
-</p>
+<div>&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
 
-<p>
+
+<table class="table" width="100px">
+  <thead>
+    <tr>
+        <th class="col-8">Resposabilidade</th>
+        <th class="col-8">Observações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+        <tr scope="row">
+            <td class="col-8"><%= @responsabilidade.nome %></td>
+            <td class="col-8"><%= @responsabilidade.observacoes %></td>
+            <td class="col-8"><%= link_to 'Edit', edit_responsabilidade_path(@responsabilidade), class: "btn btn-warning btn-s pull-right"  %></td>
+            <td class="col-8"><%= link_to 'Back', responsabilidades_path, class: "btn btn-success btn-s pull-right" %></td>
+        </tr>
+</tbody>
+
+</table>
+
+
+<!-- <p>
   <strong>Funcionarios:</strong>
-  <%= @responsabilidade.funcionarios %>
-</p>
+  <%#= @responsabilidade.funcionario_responsabilidades %>
+</p> -->
 
-<%= link_to 'Edit', edit_responsabilidade_path(@responsabilidade) %> |
-<%= link_to 'Back', responsabilidades_path %>
+
+    </div>
+</div>
+

@@ -68,7 +68,10 @@ class ResponsabilidadesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def responsabilidade_params
-      params.require(:responsabilidade).permit(:nome, :observacoes, :funcionarios_id)
+    def responsabilidade_params 
+      puts params[:responsabilidade_id]
+      params.require(:responsabilidade).permit(:nome, :observacoes)
+      # params.require(:price_table).permit(:id,:name, :initial_date, :end_date,
+      #               product_price_tables:[:id,:price, :product_id, :price_tables_id])
     end
 end

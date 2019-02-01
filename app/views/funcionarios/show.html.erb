@@ -23,7 +23,7 @@
                         <%= link_to "Responsabilidades", responsabilidades_path, class: "nav-link text-white" %>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Relatórios</a>
+                        <%= link_to "Relatórios", relatorio_path, class: "nav-link text-white" %>
                     </li>
                 </ul>
             </div>
@@ -59,18 +59,26 @@
 
 <p>
   <strong>Responsabilidades:</strong>
-  <%= @funcionario.responsabilidades %>
+  <% @funcionario.responsabilidades.each do |funcionario_responsabilidades| %>
+
+  <%= funcionario_responsabilidades.nome %>
+
+  <%end%>
 </p>
 
 <p>
   <strong>Cargo:</strong>
-  <%= @funcionario.cargo %>
+  <%= @funcionario.cargo.nome %>
 </p>
 
 <p>
 
   <strong>Dependentes:</strong>
-  <%= @funcionario.dependentes %>
+  <% @funcionario.dependentes.each do |dependentes| %> 
+   
+    <%= dependentes.nome %>
+
+  <%end%>
 
 </p>
 

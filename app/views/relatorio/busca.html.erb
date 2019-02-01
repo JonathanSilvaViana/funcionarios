@@ -1,0 +1,209 @@
+<style>
+	
+body {
+    padding-top: 50px;
+}
+.dropdown.dropdown-lg .dropdown-menu {
+    margin-top: -1px;
+    padding: 6px 20px;
+}
+.input-group-btn .btn-group {
+    display: flex !important;
+}
+.btn-group .btn {
+    border-radius: 0;
+    margin-left: -1px;
+}
+.btn-group .btn:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.btn-group .form-horizontal .btn[type="submit"] {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.form-horizontal .form-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+.form-group .form-control:last-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+@media screen and (min-width: 768px) {
+    #adv-search {
+        width: 500px;
+        margin: 0 auto;
+    }
+    .dropdown.dropdown-lg {
+        position: static !important;
+    }
+    .dropdown.dropdown-lg .dropdown-menu {
+        min-width: 500px;
+    }
+}
+
+</style>
+
+<!-- Navigation -->
+     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <span class="navbar-brand text-white">Relatórios</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <%= link_to "Home", root_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to 'Funcionários', funcionarios_path, class:"nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Cargos", cargos_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Dependentes", dependentes_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Responsabilidades", responsabilidades_path, class: "nav-link text-white" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Relatórios", relatorio_path, class: "nav-link text-white" %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+<div class="container">
+  <div class="row col-md-12 col-md-offset-2 custyle">
+
+
+
+<div class="container">
+
+	<br><br><br><br>
+  	<form>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationServer013">Nome funcionário</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationServer023">Salário</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationServerUsername33">Dependente</label>
+      <div class="input-group">
+        <input type="text" class="form-control">
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer033">Responsabilidade</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationServer043">Cargo</label>
+      <input type="text" class="form-control">
+    </div>
+  </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Buscar</button>
+</form>
+</div>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Salario</th>
+      <th>Dependente</th>
+      <th>Responsabilidade</th>
+      <th>Salario</th>
+      <th>Responsabilidades</th>
+      <th>Cargo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td>Funcionário 1</td>
+        <td>Rua Teste Número 22 Cidade Teste</td>
+        <td>(11) 948368534</td>
+        <td>22233322212</td>
+        <td>5000</td>
+        <td></td>
+
+
+
+
+
+        <td>Atendimento</td>
+        <td>
+          
+
+          Dependente 2
+        
+
+          Dependente 4
+        
+
+          Dependente 5
+        
+        </td>
+
+      </tr>
+
+      <tr>
+        <td>Funcionário 3</td>
+        <td>Rua Teste Número 22 Cidade Teste</td>
+        <td>(11) 948368534</td>
+        <td>45345402622</td>
+        <td>9900</td>
+        <td></td>
+
+          <td></td>
+
+
+
+        <td>Analista</td>
+        <td>
+          
+
+          Dependente
+        
+
+          Dependente 3
+        
+        </td>
+        
+      </tr>
+      <tr>
+        <td>Funcionário 4</td>
+        <td>Rua Teste Número 22 Cidade Teste</td>
+        <td>(11) 948368534</td>
+        <td>11122233355</td>
+        <td>9000</td>
+        <td></td>
+
+          <td></td>
+
+
+
+        <td>Desenvolvimento</td>
+
+      </tr>
+  </tbody>
+</table>
+
+  </div>
+</div>

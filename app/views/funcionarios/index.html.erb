@@ -23,7 +23,7 @@
                         <%= link_to "Responsabilidades", responsabilidades_path, class: "nav-link text-white" %>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Relatórios</a>
+                        <%= link_to "Relatórios", relatorio_path, class: "nav-link text-white" %>
                     </li>
                 </ul>
             </div>
@@ -63,12 +63,44 @@
         <td><%= funcionario.telefone %></td>
         <td><%= funcionario.documento %></td>
         <td><%= funcionario.salario %></td>
-        <td><%= funcionario.responsabilidades.pluck(:nome) %></td>
+        <% if funcionario.funcionario_responsabilidades.any? %>
+        <td>
+          
+         <% funcionario.responsabilidades.each do |responsabilidades| %>
+
+         <%= responsabilidades.nome %>
+
+         <%end%>
+
+        </td>
+
+        <% else %>
+
+          <td></td>
+
+        <% end %>
+
+
         <td><%= funcionario.cargo&.nome %></td>
-        <td><%= funcionario.dependentes %></td>
-        <td><%= link_to 'Show', funcionario , class: "btn btn-info btn-xs" %></td>
-        <td><%= link_to 'Edit', edit_funcionario_path(funcionario), class: "btn btn-warning btn-xs" %></td>
-        <td><%= link_to 'Destroy', funcionario, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
+        <% if funcionario.dependentes.any?  %>
+        <td>
+          
+          <% funcionario.dependentes.each do |dependente| %>
+
+          <%= dependente.nome %>
+        
+        <% end %>
+        </td>
+
+          <% else %>
+
+          <td></td>
+
+        <% end %>
+
+        <td><%= link_to 'Show', funcionario , class: "btn btn-info btn-s" %></td>
+        <td><%= link_to 'Edit', edit_funcionario_path(funcionario), class: "btn btn-warning btn-s" %></td>
+        <td><%= link_to 'Destroy', funcionario, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-s" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -76,7 +108,7 @@
 
 <br>
 
-<%= link_to 'New Funcionario', new_funcionario_path, class: "btn btn-primary btn-xs pull-right" %>
+<%= link_to 'New Funcionario', new_funcionario_path, class: "btn btn-primary btn-s pull-right" %>
 
 </div>
 </div>
